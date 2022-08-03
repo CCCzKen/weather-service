@@ -3,7 +3,7 @@ FROM python:3.7.12
 RUN mkdir -p /data/apps/weather_service
 RUN mkdir -p /data/logs
 
-WORKDIR /data/apps/leek_service
+WORKDIR /data/apps/weather_service
 
 RUN echo 'Asia/Shanghai' > /etc/timezone && /bin/ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 
