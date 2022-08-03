@@ -1,0 +1,6 @@
+/logs
+celerybeat-schedule*
+*.pyc
+dev.py
+cloud.py
+.idea/

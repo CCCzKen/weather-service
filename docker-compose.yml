@@ -1,0 +1,28 @@
+version: "3"
+services:
+  app:
+    build: .
+    container_name: "weather_service"
+    command: gunicorn -c gunicorn.py app:app
+    restart: always
+    ports:
+    - "8220:5000"
+    volumes:
+    - .:/data/apps/weather_service
+    - ./logs:/data/logs/
+    environment:
+    - MODE=cloud
+    network_mode: bridge
+  app2:
+    build: .
+    container_name: "weather_service2"
+    command: gunicorn -c gunicorn.py app:app
+    restart: always
+    ports:
+      - "8221:5000"
+    volumes:
+      - .:/data/apps/weather_service
+      - ./logs:/data/logs/
+    environment:
+      - MODE=cloud
+    network_mode: bridge
